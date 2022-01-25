@@ -58,7 +58,7 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
 
             // Etapa 3 del software de autoverificacion de covid-19 (Etapa Descartativa)
             } else {
-                if(readlineSync.keyInYN(`${'#'.repeat(100)}\n${contactoDirecto}`.green)) {
+                if(readlineSync.keyInYN(`${separador}\n${contactoDirecto}`.green)) {
 
                     // Descarte por contacto directo con una persona Covid-19 positivo
                     console.log(`El sistema determino que usted representa un riesgo para la salud publica de la nacion, por lo que no puede abordar el vuelo correspondiente, le pedimos que se dirija de manera inmediata a la sala de emergencias del aeropuerto`.red);
@@ -85,24 +85,24 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
 
         // Preguntas para tomar los datos del 3ro al que representa
         datosPersona.nombreApellido = readlineSync.question('Cual es el nombre y apellido de la persona a la que representa?  '.green);
-        datosPersona.nacionalidad = readlineSync.question(`${'#'.repeat(100)}\nHola ${datosPersona.nombreApellido}, cual es su nacionalidad?  `.green);
-        datosPersona.edad = readlineSync.question(`${'#'.repeat(100)}\n${datosPersona.nombreApellido} que edad tiene?  `.green);
+        datosPersona.nacionalidad = readlineSync.question(`${separador}\nHola ${datosPersona.nombreApellido}, cual es su nacionalidad?  `.green);
+        datosPersona.edad = readlineSync.question(`${separador}\n${datosPersona.nombreApellido} que edad tiene?  `.green);
 
         // Condicional de la vacuna 1ra etapa del sistema (Condicional descartativa) (True[y] / False[n])
-        if(readlineSync.keyInYN(`${'#'.repeat(100)}\n${condicionalVacuna}`.green)) {
+        if(readlineSync.keyInYN(`${separador}\n${condicionalVacuna}`.green)) {
 
             // Etapa 2 del software de autoverificacion de covid-19 (Etapa descartativa)
-            if(readlineSync.keyInYN(`${'#'.repeat(100)}\n${condicionalSintomas}`.green)) {
+            if(readlineSync.keyInYN(`${separador}\n${condicionalSintomas}`.green)) {
 
                 // Descarte por sintomas de covid-19
-                console.log(`${'#'.repeat(100)}\nSegún sus síntomas, es posible que necesite atención médica de urgencia. vaya a la sala de emergencias del aeropuerto.`.red);
+                console.log(`${separador}\nSegún sus síntomas, es posible que necesite atención médica de urgencia. vaya a la sala de emergencias del aeropuerto.`.red);
 
                 // Inyeccion de la razon al objeto de los datos del usuario
                 datosPersona.razonDelRechazo = 'Necesita atencion medica';
 
             // Etapa 3 del software de autoverificacion de covid-19 (Etapa Descartativa)
             } else {
-                if(readlineSync.keyInYN(`${'#'.repeat(100)}\n${contactoDirecto}`.green)) {
+                if(readlineSync.keyInYN(`${separador}\n${contactoDirecto}`.green)) {
 
                     // Descarte por contacto directo con una persona Covid-19 positivo
                     console.log(`El sistema determino que usted representa un riesgo para la salud publica de las naciones, por lo que no puede abordar a el vuelo correspondiente, le pedimos que se dirija de manera inmediata a la sala de emergencias del aeropuerto`.red);
@@ -118,7 +118,7 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
         } else {
 
             // Descarte de abordaje por no cumplir con los requisitos de vacunacion
-            console.log(`${'#'.repeat(100)}\nUsted no es apto para abordar su vuelo ya que no cumple con los requisitos de vacunacion antes mencionados`.red);
+            console.log(`${separador}\nUsted no es apto para abordar su vuelo ya que no cumple con los requisitos de vacunacion antes mencionados`.red);
 
             // Inyeccion de la razon al objeto de los datos del usuario
             datosPersona.razonDelRechazo = 'No esta vacunado';
@@ -127,7 +127,7 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
 
 // Mensaje mostrado si los terminos y condiciones iniciales no son aceptados
 } else {
-    console.log(`${'#'.repeat(100)}\nEs obligatorio que usted realice este verificador de manera satisfactoria para poder seguir al siguiente proceso del abordaje a su vuelo`)
+    console.log(`${separador}\nEs obligatorio que usted realice este verificador de manera satisfactoria para poder seguir al siguiente proceso del abordaje a su vuelo`)
 }
 
 console.log({datosPersona});
