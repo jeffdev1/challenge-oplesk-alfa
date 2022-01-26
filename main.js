@@ -1,3 +1,5 @@
+// CODIGO MODIFICADO -AEROPUERTO-
+
 /*
 Para instalar el modulo readline: https://www.npmjs.com/package/readline-sync
 */
@@ -22,15 +24,13 @@ const datosPersona = {
 // -------------VARIABLES DE UTILIDAD-------------
 const separador = '#'.repeat(100);
 
-const terminosCondiciones = 'Entiende usted que la finalidad de este verificador es ayudar a las autoridades del aeropuesto a tomar decisiones y asi evitar la propagacion del COVID-19?';
+const terminosCondiciones = 'Entiende usted que la finalidad de este verificador es ayudar a las autoridades del aeropuerto a tomar decisiones y asi evitar la propagacion del COVID-19?';
 
 const condicionalVacuna = '¿Está completamente vacunado contra el COVID-19? se considera completamente vacunado 2 semanas después de ponerse la segunda dosis de una serie de dos dosis, como en el caso de las vacunas Pfizer-BioNTech o Moderna; o 2 semanas después de ponerse una vacuna de una sola dosis, como en el caso de la vacuna Janssen de Johnson & Johnson.';
 
 const condicionalSintomas = '¿Tiene alguno de estos síntomas potencialmente mortales? Dificultad para respirar, dolor o presión persistentes en el pecho, Estado de confusión de aparición reciente, No puede despertarse o permanecer despierto y/o Color pálido, gris o azulado de la piel, los labios, o el lecho de las uñas, dependiendo del tono de piel';
 
 const contactoDirecto = 'En las últimas dos semanas, ¿tuvo contacto cercano con alguien que tuviera COVID-19? Excluya a las personas que habían tenido COVID-19 en los 3 meses anteriores.';
-
-
 
 // -------------EJECUCION DEL SOFTWARE-------------
 // Aceptacion de terminos y condiciones del programa a ejecutarse proximamente (True[y] / False[n])
