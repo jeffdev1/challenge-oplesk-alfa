@@ -1,5 +1,3 @@
-// CODIGO MODIFICADO -AEROPUERTO-
-
 /*
 Para instalar el modulo readline: https://www.npmjs.com/package/readline-sync
 */
@@ -69,6 +67,10 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
                 // El sistema determina que no se corren riesgos de COVID-19 con este pasajero
                 } else {
                     console.log(`El sistema determino que usted no representa un riesgo para la salud publica de la nacion, por lo que puede abordar el vuelo correspondiente, le deseamos un feliz viaje`.blue);
+
+                    datosPersona.numeroAvion = readlineSync.question(`${separador}${datosPersona.nombreApellido} indique su numero de avion, tenga en cuenta que debe ser un numero entre 1 y 10  `.green);
+                    datosPersona.numeroFila = readlineSync.question(`${datosPersona.nombreApellido} indique su la fila donde se cuentra su asiento, tenga en cuenta que debe ser un numero entre 1 y 8  `.green);
+                    datosPersona.numeroAsiento = readlineSync.question(`${datosPersona.nombreApellido} indique el numero de asiento, tenga en cuenta que debe ser un numero entre 1 y 5  `.green);
                 }
             }
 
@@ -130,4 +132,101 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
     console.log(`${separador}\nEs obligatorio que usted realice este verificador de manera satisfactoria para poder seguir al siguiente proceso del abordaje a su vuelo`)
 }
 
-console.log({datosPersona});
+// console.log({datosPersona});
+
+const mapaAvion = [
+    
+//------ AVION 1 -----------  
+    [[0, 'a', 0, 0, 0],
+    [0, 'b', 0, 0, 0],
+    [0, 'c', 0, 0, 0],
+    [0, 'AQUI!!', 0, 0, 0],
+    [0, 'e', 0, 0, 0],
+    [0, 'f', 0, 0, 0],
+    [0, 'g', 0, 0, 0],
+    [0, 'h', 0, 0, 0]],
+//------ AVION 2 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+//------ AVION 3 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+//------ AVION 4 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 'AHORA AQUI!!'],
+    [0, 0, 0, 0, 0]],
+//------ AVION 5 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+//------ AVION 6 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+//------ AVION 7 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+//------ AVION 8 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+//------ AVION 9 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+//------ AVION 10 -----------  
+    [[0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0]],
+]
+
+console.log(`${separador}`);
+console.log(mapaAvion[datosPersona.numeroAvion - 1][datosPersona.numeroFila - 1][datosPersona.numeroAsiento - 1]);
