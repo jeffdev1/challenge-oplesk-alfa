@@ -62,14 +62,14 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
                     console.log(`El sistema determino que usted representa un riesgo para la salud publica de la nacion, por lo que no puede abordar el vuelo correspondiente, le pedimos que se dirija de manera inmediata a la sala de emergencias del aeropuerto`.red);
 
                     // Inyeccion de la razon al objeto de los datos del usuario
-                    datosPersona.razonDelRechazo = 'Contanto directo con una persona covid-19 positivo';
+                    datosPersona.razonDelRechazo = 'Contacto directo con una persona covid-19 positivo';
 
                 // El sistema determina que no se corren riesgos de COVID-19 con este pasajero
                 } else {
                     console.log(`El sistema determino que usted no representa un riesgo para la salud publica de la nacion, por lo que puede abordar el vuelo correspondiente, le deseamos un feliz viaje`.blue);
 
-                    datosPersona.numeroAvion = readlineSync.question(`${separador}${datosPersona.nombreApellido} indique su numero de avion, tenga en cuenta que debe ser un numero entre 1 y 10  `.green);
-                    datosPersona.numeroFila = readlineSync.question(`${datosPersona.nombreApellido} indique su la fila donde se cuentra su asiento, tenga en cuenta que debe ser un numero entre 1 y 8  `.green);
+                    datosPersona.numeroAvion = readlineSync.question(`${separador}\n${datosPersona.nombreApellido} indique su numero de avion, tenga en cuenta que debe ser un numero entre 1 y 10  `.green);
+                    datosPersona.numeroFila = readlineSync.question(`${datosPersona.nombreApellido} indique su la fila donde se encuentra su asiento, tenga en cuenta que debe ser un numero entre 1 y 8  `.green);
                     datosPersona.numeroAsiento = readlineSync.question(`${datosPersona.nombreApellido} indique el numero de asiento, tenga en cuenta que debe ser un numero entre 1 y 5  `.green);
                 }
             }
@@ -107,7 +107,7 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
                 if(readlineSync.keyInYN(`${separador}\n${contactoDirecto}`.green)) {
 
                     // Descarte por contacto directo con una persona Covid-19 positivo
-                    console.log(`El sistema determino que usted representa un riesgo para la salud publica de las naciones, por lo que no puede abordar a el vuelo correspondiente, le pedimos que se dirija de manera inmediata a la sala de emergencias del aeropuerto`.red);
+                    console.log(`El sistema determino que usted representa un riesgo para la salud publica de las naciones, por lo que no puede abordar el vuelo correspondiente, le pedimos que se dirija de manera inmediata a la sala de emergencias del aeropuerto`.red);
 
                     // Inyeccion de la razon al objeto de los datos del usuario
                     datosPersona.razonDelRechazo = 'Contanto directo con una persona covid-19 positivo';
@@ -134,98 +134,104 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
 
 // console.log({datosPersona});
 
+// asiento ocupado (todos)
+let z = (` ✔️  Su asiento asignado esta disponible `)
+
+// asiento disponible (el indicado, 1)
+// let x = (`❌`)
+
 const mapaAvion = [
     
 //------ AVION 1 -----------  
-    [[0, 'a', 0, 0, 0],
-    [0, 'b', 0, 0, 0],
-    [0, 'c', 0, 0, 0],
-    [0, 'AQUI!!', 0, 0, 0],
-    [0, 'e', 0, 0, 0],
-    [0, 'f', 0, 0, 0],
-    [0, 'g', 0, 0, 0],
-    [0, 'h', 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 2 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 3 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 4 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 'AHORA AQUI!!'],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 5 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 6 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
-//------ AVION 7 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
+    //------ AVION 7 -----------  
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 8 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 9 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 //------ AVION 10 -----------  
-    [[0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]],
+    [[z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z],
+    [z, z, z, z, z]],
 ]
 
 console.log(`${separador}`);
