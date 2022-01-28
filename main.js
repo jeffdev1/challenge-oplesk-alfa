@@ -118,8 +118,7 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
                 }
             }
         } else {
-
-            // Descarte de abordaje por no cumplir con los requisitos de vacunacion
+        // Descarte de abordaje por no cumplir con los requisitos de vacunacion
             console.log(`${separador}\nUsted no es apto para abordar su vuelo ya que no cumple con los requisitos de vacunacion antes mencionados`.red);
 
             // Inyeccion de la razon al objeto de los datos del usuario
@@ -132,106 +131,121 @@ if(readlineSync.keyInYN(`${terminosCondiciones}`.green)) {
     console.log(`${separador}\nEs obligatorio que usted realice este verificador de manera satisfactoria para poder seguir al siguiente proceso del abordaje a su vuelo`)
 }
 
-// console.log({datosPersona});
+// Parte 2 - asignacion de pasajeros a sus vuelos
 
-// asiento ocupado (todos)
-let z = (` ✔️  Su asiento asignado esta disponible `)
-
-// asiento disponible (el indicado, 1)
-// let x = (`❌`)
+//--- AVION 1 (Venezuela)----------
+let a = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Venezuela`)
+//--- AVION 2 (Bolivia)------------
+let b = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Bolivia`)
+//--- AVION 3 (Colombia)-----------
+let c = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Colombia`)
+//--- AVION 4 (Argentina)----------
+let d = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Argentina`)
+//--- AVION 5 (Uruguay)------------
+let e = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Uruguay`)
+//--- AVION 6 (Chile)--------------
+let f = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Chile`)
+//--- AVION 7 (Ecuador)------------
+let g = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Ecuador`)
+//--- AVION 8 (Puerto Rico)--------
+let h = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Puerto Rico`)
+//--- AVION 9 (Paraguay)-----------
+let i = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Paraguay`)
+//--- AVION 1O (Honduras)----------
+let j = (` ✔️  Su asiento asignado esta disponible y su vuelo se dirige a Honduras`)
 
 const mapaAvion = [
     
 //------ AVION 1 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[a, a, a, a, a],
+    [a, a, a, a, a],
+    [a, a, a, a, a],
+    [a, a, a, a, a],
+    [a, a, a, a, a],
+    [a, a, a, a, a],
+    [a, a, a, a, a],
+    [a, a, a, a, a]],
 //------ AVION 2 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[b, b, b, b, b],
+    [b, b, b, b, b],
+    [b, b, b, b, b],
+    [b, b, b, b, b],
+    [b, b, b, b, b],
+    [b, b, b, b, b],
+    [b, b, b, b, b],
+    [b, b, b, b, b]],
 //------ AVION 3 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[c, c, c, c, c],
+    [c, c, c, c, c],
+    [c, c, c, c, c],
+    [c, c, c, c, c],
+    [c, c, c, c, c],
+    [c, c, c, c, c],
+    [c, c, c, c, c],
+    [c, c, c, c, c]],
 //------ AVION 4 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[d, d, d, d, d],
+    [d, d, d, d, d],
+    [d, d, d, d, d],
+    [d, d, d, d, d],
+    [d, d, d, d, d],
+    [d, d, d, d, d],
+    [d, d, d, d, d],
+    [d, d, d, d, d]],
 //------ AVION 5 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[e, e, e, e, e],
+    [e, e, e, e, e],
+    [e, e, e, e, e],
+    [e, e, e, e, e],
+    [e, e, e, e, e],
+    [e, e, e, e, e],
+    [e, e, e, e, e],
+    [e, e, e, e, e]],
 //------ AVION 6 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
-    //------ AVION 7 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[f, f, f, f, f],
+    [f, f, f, f, f],
+    [f, f, f, f, f],
+    [f, f, f, f, f],
+    [f, f, f, f, f],
+    [f, f, f, f, f],
+    [f, f, f, f, f],
+    [f, f, f, f, f]],
+//------ AVION 7 -----------  
+    [[g, g, g, g, g],
+    [g, g, g, g, g],
+    [g, g, g, g, g],
+    [g, g, g, g, g],
+    [g, g, g, g, g],
+    [g, g, g, g, g],
+    [g, g, g, g, g],
+    [g, g, g, g, g]],
 //------ AVION 8 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[h, h, h, h, h],
+    [h, h, h, h, h],
+    [h, h, h, h, h],
+    [h, h, h, h, h],
+    [h, h, h, h, h],
+    [h, h, h, h, h],
+    [h, h, h, h, h],
+    [h, h, h, h, h]],
 //------ AVION 9 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[i, i, i, i, i],
+    [i, i, i, i, i],
+    [i, i, i, i, i],
+    [i, i, i, i, i],
+    [i, i, i, i, i],
+    [i, i, i, i, i],
+    [i, i, i, i, i],
+    [i, i, i, i, i]],
 //------ AVION 10 -----------  
-    [[z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z],
-    [z, z, z, z, z]],
+    [[j, j, j, j, j],
+    [j, j, j, j, j],
+    [j, j, j, j, j],
+    [j, j, j, j, j],
+    [j, j, j, j, j],
+    [j, j, j, j, j],
+    [j, j, j, j, j],
+    [j, j, j, j, j]],
 ]
 
 console.log(`${separador}`);
